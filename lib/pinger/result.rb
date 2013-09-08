@@ -7,9 +7,13 @@ module Pinger
       @data = data
       @errors = errors
     end
-    
+
     def success?
-      errors.any?
+      errors.none?
+    end
+
+    def average
+      data[:average]
     end
 
     def test
