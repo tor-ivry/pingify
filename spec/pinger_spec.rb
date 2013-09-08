@@ -39,6 +39,14 @@ describe Pinger do
       errs[0].class.must_equal RestClient::RequestTimeout
     end
 
+    [500, 401, 404].each do |err_code|
+      it "#{err_code} error" do
+        stub_request(:any, 'uri/ping').to_return(:status => err_code)
+        errs = subject.run.errors
+        errs.wont_be_empty
+      end
+    end
+
     it 'no uri' do
       errs = subject.run.errors
       errs.wont_be_empty
