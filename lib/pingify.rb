@@ -1,8 +1,8 @@
-require "pinger/version"
-require 'pinger/result'
+require "pingify/version"
+require 'pingify/result'
 require 'rest-client'
 
-module Pinger
+module Pingify
   class Runnable
 
     attr_accessor :uri

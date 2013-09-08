@@ -1,9 +1,9 @@
 require 'minitest/autorun'
-require 'pinger/result'
+require 'pingify/result'
 
-describe Pinger::Result do
+describe Pingify::Result do
   let(:result){
-    Pinger::Result.new(average: 1.0)
+    Pingify::Result.new(average: 1.0)
   }
   it 'passes on predicate' do
     test = result.test do |d|

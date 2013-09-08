@@ -1,11 +1,10 @@
 require 'minitest/autorun'
-require 'mocha/setup'
-require 'pinger'
+require 'pingify'
 require 'webmock/minitest'
 
-describe Pinger do
+describe Pingify do
   let(:subject){
-    Pinger::Runnable.new({:uri => 'http://uri/ping'})
+    Pingify::Runnable.new({:uri => 'http://uri/ping'})
   }
 
   describe 'general ping' do
