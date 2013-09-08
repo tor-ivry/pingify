@@ -23,7 +23,7 @@ module Pinger
 
       avg = total_time / runtimes
 
-      data = { :average => avg }.merge(ping_headers)
+      data = { :average => avg, :body => res.body }.merge(ping_headers)
       return Result.new(data)
     rescue
       return ErrorResult.new({}, [$!])
