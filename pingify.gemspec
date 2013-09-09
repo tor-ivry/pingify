@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Pingify::VERSION
   spec.authors       = ["tor"]
   spec.email         = ["torkale@gmail.com"]
-  spec.description   = %q{}
-  spec.summary       = %q{}
-  spec.homepage      = ""
+  spec.description   = %q{Pingify is a simple library that enables simple ping checks on running service }
+  spec.summary       = %q{ping checks}
+  spec.homepage      = "https://rubygems.org/gems/pingify"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
