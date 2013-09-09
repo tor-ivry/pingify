@@ -1,6 +1,7 @@
 # Pingify
 
-TODO: Write a gem description
+Pingify is a simple library that enables simple ping checks on running service
+
 
 ## Installation
 
@@ -18,7 +19,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First define a Pingify object with the options you like
+
+    pingify = Pingify::Runnable.new(
+      uri: "http://example.com/ping", # service ping uri
+      timeout: 4,                     # http timeout
+      open_timeout: 4,                # http open timeout
+      times: 10)                      # number of times to run
+
+Run the test with #run
+
+    result = pingify.run
+
+Query the result
+
+    result.success?
+
+Result data, headers that begin with 'x-ping-' will be added to the hash.
+
+    result.data[:average]     # average ping time
+    result.data[:body]        # result body
+    result.data[:appversion]  # flitered result header *x-ping-appversion*
 
 ## Contributing
 

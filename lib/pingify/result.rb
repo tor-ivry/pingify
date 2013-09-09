@@ -1,4 +1,4 @@
-module Pinger
+module Pingify
   class Result
     attr_reader :errors
     attr_reader :data
