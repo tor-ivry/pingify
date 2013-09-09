@@ -1,11 +1,15 @@
 module Pingify
   class Result
     attr_reader :errors
-    attr_reader :data
 
     def initialize(data, errors = [])
       @data = data
       @errors = errors
+    end
+
+    def data
+      return yield(@data) if block_given?
+      @data
     end
 
     def success?

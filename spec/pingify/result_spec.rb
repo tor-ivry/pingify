@@ -6,14 +6,14 @@ describe Pingify::Result do
     Pingify::Result.new(average: 1.0)
   }
   it 'passes on predicate' do
-    test = result.test do |d|
+    test = result.data do |d|
       d[:average] < 2
     end
     assert test
   end
 
   it "fails on predicate" do
-    test = result.test do |d|
+    test = result.data do |d|
       d[:average] > 2
     end
     refute test
